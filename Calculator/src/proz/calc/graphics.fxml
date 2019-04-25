@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="200.0" styleClass="back" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <GridPane gridLinesVisible="true" layoutY="50.0" prefHeight="300.0" prefWidth="200.0" styleClass="grid" stylesheets="@style.css">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="numbers" stylesheets="@style.css" text="0" textAlignment="CENTER" GridPane.rowIndex="5">
+               <font>
+                  <Font name="Segoe UI Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="numbers" stylesheets="@style.css" text="000" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <font>
+                  <Font name="Segoe UI Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="numbers" stylesheets="@style.css" text="." GridPane.columnIndex="2" GridPane.rowIndex="5">
+               <font>
+                  <Font name="Segoe UI Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="equals" stylesheets="@style.css" text="=" GridPane.columnIndex="3" GridPane.rowIndex="5">
+               <font>
+                  <Font name="Segoe UI Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="basicArithmetics" stylesheets="@style.css" text="+" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Segoe UI Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="basicArithmetics" stylesheets="@style.css" text="-" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Segoe UI Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="basicArithmetics" stylesheets="@style.css" text="×" GridPane.columnIndex="3" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Segoe UI Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="basicArithmetics" stylesheets="@style.css" text="÷" GridPane.columnIndex="3" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Segoe UI Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="numbers" stylesheets="@style.css" text="1" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Segoe UI Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="numbers" stylesheets="@style.css" text="2" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Segoe UI Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="numbers" stylesheets="@style.css" text="3" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Segoe UI Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="numbers" stylesheets="@style.css" text="4" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Segoe UI Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="numbers" stylesheets="@style.css" text="5" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Segoe UI Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="numbers" stylesheets="@style.css" text="6" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Segoe UI Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="numbers" stylesheets="@style.css" text="7" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Segoe UI Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="numbers" stylesheets="@style.css" text="8" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Segoe UI Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="numbers" stylesheets="@style.css" text="9" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Segoe UI Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="clearButtons" stylesheets="@style.css" text="AC" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Segoe UI Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="clearButtons" stylesheets="@style.css" text="⌫" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Segoe UI Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="invertSign" stylesheets="@style.css" text="⁺∕₋" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Segoe UI Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="advancedArithmetic" stylesheets="@style.css" text="√n">
+               <font>
+                  <Font name="Segoe UI Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="advancedArithmetic" stylesheets="@style.css" text="aⁿ" GridPane.columnIndex="1">
+               <font>
+                  <Font name="Segoe UI Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="advancedArithmetic" stylesheets="@style.css" text="n!" GridPane.columnIndex="2">
+               <font>
+                  <Font name="Segoe UI Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="advancedArithmetic" stylesheets="@style.css" text="nCr" GridPane.columnIndex="3">
+               <font>
+                  <Font name="Segoe UI Bold" size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </GridPane>
+      <TextFlow layoutX="2.0" layoutY="3.0" prefHeight="46.0" prefWidth="196.0" styleClass="resultDisplay" stylesheets="@style.css" />
+   </children>
+</AnchorPane>
