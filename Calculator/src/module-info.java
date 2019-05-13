@@ -1,6 +1,7 @@
 module proz.calc {
 	requires javafx.controls;
 	requires javafx.fxml;
+	requires jdk.jshell;
 	
 	requires transitive javafx.graphics;
 	

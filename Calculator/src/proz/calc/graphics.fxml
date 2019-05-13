@@ -26,128 +26,128 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="numbers" stylesheets="@style.css" text="0" textAlignment="CENTER" GridPane.rowIndex="5">
+            <Button id="zero" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="numbers" stylesheets="@style.css" text="0" textAlignment="CENTER" GridPane.rowIndex="5">
                <font>
                   <Font name="Segoe UI Bold" size="16.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="numbers" stylesheets="@style.css" text="000" GridPane.columnIndex="1" GridPane.rowIndex="5">
+            <Button id="tripleZero" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="numbers" stylesheets="@style.css" text="000" GridPane.columnIndex="1" GridPane.rowIndex="5">
                <font>
                   <Font name="Segoe UI Bold" size="16.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="numbers" stylesheets="@style.css" text="." GridPane.columnIndex="2" GridPane.rowIndex="5">
+            <Button id="decimalSign" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="numbers" stylesheets="@style.css" text="." GridPane.columnIndex="2" GridPane.rowIndex="5">
                <font>
                   <Font name="Segoe UI Bold" size="16.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="equals" stylesheets="@style.css" text="=" GridPane.columnIndex="3" GridPane.rowIndex="5">
+            <Button id="equals" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="equals" stylesheets="@style.css" text="=" GridPane.columnIndex="3" GridPane.rowIndex="5">
                <font>
                   <Font name="Segoe UI Bold" size="16.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="basicArithmetics" stylesheets="@style.css" text="+" GridPane.columnIndex="3" GridPane.rowIndex="1">
+            <Button id="add" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="basicArithmetics" stylesheets="@style.css" text="+" GridPane.columnIndex="3" GridPane.rowIndex="1">
                <font>
                   <Font name="Segoe UI Bold" size="16.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="basicArithmetics" stylesheets="@style.css" text="-" GridPane.columnIndex="3" GridPane.rowIndex="2">
+            <Button id="subtract" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="basicArithmetics" stylesheets="@style.css" text="-" GridPane.columnIndex="3" GridPane.rowIndex="2">
                <font>
                   <Font name="Segoe UI Bold" size="16.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="basicArithmetics" stylesheets="@style.css" text="×" GridPane.columnIndex="3" GridPane.rowIndex="3">
+            <Button id="multiply" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="basicArithmetics" stylesheets="@style.css" text="×" GridPane.columnIndex="3" GridPane.rowIndex="3">
                <font>
                   <Font name="Segoe UI Bold" size="16.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="basicArithmetics" stylesheets="@style.css" text="÷" GridPane.columnIndex="3" GridPane.rowIndex="4">
+            <Button id="divide" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="basicArithmetics" stylesheets="@style.css" text="÷" GridPane.columnIndex="3" GridPane.rowIndex="4">
                <font>
                   <Font name="Segoe UI Bold" size="16.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="numbers" stylesheets="@style.css" text="1" GridPane.rowIndex="4">
+            <Button id="one" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="numbers" stylesheets="@style.css" text="1" GridPane.rowIndex="4">
                <font>
                   <Font name="Segoe UI Bold" size="16.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="numbers" stylesheets="@style.css" text="2" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <Button id="two" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="numbers" stylesheets="@style.css" text="2" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <font>
                   <Font name="Segoe UI Bold" size="16.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="numbers" stylesheets="@style.css" text="3" GridPane.columnIndex="2" GridPane.rowIndex="4">
+            <Button id="three" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="numbers" stylesheets="@style.css" text="3" GridPane.columnIndex="2" GridPane.rowIndex="4">
                <font>
                   <Font name="Segoe UI Bold" size="16.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="numbers" stylesheets="@style.css" text="4" GridPane.rowIndex="3">
+            <Button id="four" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="numbers" stylesheets="@style.css" text="4" GridPane.rowIndex="3">
                <font>
                   <Font name="Segoe UI Bold" size="16.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="numbers" stylesheets="@style.css" text="5" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <Button id="five" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="numbers" stylesheets="@style.css" text="5" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <font>
                   <Font name="Segoe UI Bold" size="16.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="numbers" stylesheets="@style.css" text="6" GridPane.columnIndex="2" GridPane.rowIndex="3">
+            <Button id="six" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="numbers" stylesheets="@style.css" text="6" GridPane.columnIndex="2" GridPane.rowIndex="3">
                <font>
                   <Font name="Segoe UI Bold" size="16.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="numbers" stylesheets="@style.css" text="7" GridPane.rowIndex="2">
+            <Button id="seven" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="numbers" stylesheets="@style.css" text="7" GridPane.rowIndex="2">
                <font>
                   <Font name="Segoe UI Bold" size="16.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="numbers" stylesheets="@style.css" text="8" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <Button id="eight" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="numbers" stylesheets="@style.css" text="8" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <font>
                   <Font name="Segoe UI Bold" size="16.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="numbers" stylesheets="@style.css" text="9" GridPane.columnIndex="2" GridPane.rowIndex="2">
+            <Button id="nine" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="numbers" stylesheets="@style.css" text="9" GridPane.columnIndex="2" GridPane.rowIndex="2">
                <font>
                   <Font name="Segoe UI Bold" size="16.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="clearButtons" stylesheets="@style.css" text="AC" GridPane.rowIndex="1">
+            <Button id="allCancel" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="clearButtons" stylesheets="@style.css" text="AC" GridPane.rowIndex="1">
                <font>
                   <Font name="Segoe UI Bold" size="16.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="clearButtons" stylesheets="@style.css" text="⌫" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Button id="backspace" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="clearButtons" stylesheets="@style.css" text="⌫" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <font>
                   <Font name="Segoe UI Bold" size="16.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="invertSign" stylesheets="@style.css" text="⁺∕₋" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <Button id="invertSign" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="invertSign" stylesheets="@style.css" text="⁺∕₋" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <font>
                   <Font name="Segoe UI Bold" size="16.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="advancedArithmetic" stylesheets="@style.css" text="√n">
+            <Button id="sqrt" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="advancedArithmetic" stylesheets="@style.css" text="√n">
                <font>
                   <Font name="Segoe UI Bold" size="16.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="advancedArithmetic" stylesheets="@style.css" text="aⁿ" GridPane.columnIndex="1">
+            <Button id="power" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="advancedArithmetic" stylesheets="@style.css" text="aⁿ" GridPane.columnIndex="1">
                <font>
                   <Font name="Segoe UI Bold" size="16.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="advancedArithmetic" stylesheets="@style.css" text="n!" GridPane.columnIndex="2">
+            <Button id="factorial" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="advancedArithmetic" stylesheets="@style.css" text="n!" GridPane.columnIndex="2">
                <font>
                   <Font name="Segoe UI Bold" size="16.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="advancedArithmetic" stylesheets="@style.css" text="nCr" GridPane.columnIndex="3">
+            <Button id="combinations" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="advancedArithmetic" stylesheets="@style.css" text="nCr" GridPane.columnIndex="3">
                <font>
                   <Font name="Segoe UI Bold" size="16.0" />
                </font>
             </Button>
          </children>
       </GridPane>
-      <TextFlow layoutX="2.0" layoutY="3.0" prefHeight="46.0" prefWidth="196.0" styleClass="resultDisplay" stylesheets="@style.css" />
+      <TextFlow id="display" layoutX="2.0" layoutY="3.0" prefHeight="46.0" prefWidth="196.0" styleClass="resultDisplay" stylesheets="@style.css" />
    </children>
 </AnchorPane>
