@@ -5,6 +5,7 @@ module proz.calc {
 	
 	requires transitive javafx.graphics;
 	
-	exports proz.calc to javafx.graphics;
+	opens proz.calc to javafx.fxml;
+	exports proz.calc;
 
 }

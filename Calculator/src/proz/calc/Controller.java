@@ -5,6 +5,7 @@ import javafx.scene.control.Button;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import javafx.scene.text.TextFlow;
 
 public class Controller {
@@ -82,17 +83,13 @@ public class Controller {
 
 	@FXML
 	private TextFlow display;
-
-	private Text displayText = new Text("0");
+	
+	@FXML
+	private Text displayText;
+	
 	private String calcInput = "";
 	private Model model = new Model();
-
-	public Controller() {
-		displayText.setFill(Color.BLACK);
-		displayText.setFont(Font.font("Segoe UI Bold", 20));
-		display.getChildren().add(displayText);
-	}
-
+	
 	private void digitAppend(String digit) {
 		if(displayText.getText().equals("0"))
 			if(!(digit.equals("0") || digit.equals("000")))
@@ -100,10 +97,10 @@ public class Controller {
 		else
 			displayText.setText(displayText.getText() + digit);
 	}
-	
-	private void click() {
-		zero.setOnAction((event) -> {
-			System.out.println("zero clicked");
+
+	@FXML
+	public void initialize() {		
+		zero.setOnAction(e -> {
 			digitAppend("0");
 		});
 		
