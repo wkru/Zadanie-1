@@ -15,17 +15,19 @@ public class Model {
 			List<SnippetEvent> events = jshell.eval(expression);
 
 			for (SnippetEvent e : events) {
-				switch (e.status()) {
-				case VALID:
-					if (e.value() != null) {
-						result = e.value();
+				if(e.causeSnippet() == null) {
+					switch (e.status()) {
+					case VALID:
+						if (e.value() != null) {
+							result = e.value();
+						}
+						break;
+					default:
+						Alert alert = new Alert(AlertType.ERROR);
+						alert.setTitle("B³¹d dzia³ania programu");
+						alert.setHeaderText("W trakcie obliczeñ napotkano b³¹d.");
+						break;
 					}
-					break;
-				default:
-					Alert alert = new Alert(AlertType.ERROR);
-					alert.setTitle("B³¹d dzia³ania programu");
-					alert.setHeaderText("W trakcie obliczeñ napotkano b³¹d.");
-					break;
 				}
 			}
 		}

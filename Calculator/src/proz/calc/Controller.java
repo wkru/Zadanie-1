@@ -2,13 +2,11 @@ package proz.calc;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
 import javafx.scene.text.Text;
-import javafx.scene.text.TextAlignment;
 import javafx.scene.text.TextFlow;
 
 public class Controller {
+	
 	@FXML
 	private Button zero;
 
@@ -91,14 +89,14 @@ public class Controller {
 	private Model model = new Model();
 	
 	private void digitAppend(String digit) {
-		if(displayText.getText().equals("0"))
+		if(displayText.getText().equals("0")) {
 			if(!(digit.equals("0") || digit.equals("000")))
-			displayText.setText(digit);
+				displayText.setText(digit);
+		}
 		else
 			displayText.setText(displayText.getText() + digit);
 	}
 
-	@FXML
 	public void initialize() {		
 		zero.setOnAction(e -> {
 			digitAppend("0");
