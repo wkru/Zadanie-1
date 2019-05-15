@@ -7,6 +7,13 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 
+/**
+ * Class responsible for linking the View and Model portions of the program.
+ * 
+ * @author wk
+ *
+ */
+
 public class Controller {
 
 	@FXML
@@ -94,6 +101,12 @@ public class Controller {
 	private boolean usePower = false;
 	private Model model = new Model();
 
+	/**
+	 * The method called by the <code>FXMLLoader</code> after populating the
+	 * interface elements entries, containing actions to be done after clicking the
+	 * buttons.
+	 */
+	@FXML
 	public void initialize() {
 		zero.setOnAction(e -> {
 			digitAppend("0");
@@ -139,56 +152,6 @@ public class Controller {
 			digitAppend("9");
 		});
 
-		backspace.setOnAction(e -> {
-			if (nonNumericOutputShown)
-				return;
-			if (displayText.getText().equals("0"))
-				return;
-
-			if (finalResultShown)
-				return;
-
-			if (displayText.getText().length() == 1) {
-				displayText.setText("0");
-				return;
-			}
-
-			displayText.setText(displayText.getText().substring(0, displayText.getText().length() - 1));
-
-		});
-
-		clearEntry.setOnAction(e -> {
-			if (nonNumericOutputShown)
-				return;
-			if (displayText.getText().equals("0"))
-				return;
-
-			if (finalResultShown)
-				return;
-
-			displayText.setText("0");
-		});
-
-		allCancel.setOnAction(e -> {
-			displayText.setText("0");
-			finalResultShown = false;
-			pendingOperation = "";
-			calcInput = "";
-			nonNumericOutputShown = false;
-			usePower = false;
-		});
-
-		invertSign.setOnAction(e -> {
-			if (nonNumericOutputShown)
-				return;
-			if (displayText.getText().equals("0"))
-				return;
-			if (displayText.getText().startsWith("-"))
-				displayText.setText(displayText.getText().substring(1, displayText.getText().length()));
-			else
-				displayText.setText("-" + displayText.getText());
-		});
-
 		decimalSign.setOnAction(e -> {
 			digitAppend(".");
 		});
@@ -207,24 +170,6 @@ public class Controller {
 
 		divide.setOnAction(e -> {
 			mathOperationClicked("/");
-		});
-
-		equals.setOnAction(e -> {
-			if (nonNumericOutputShown)
-				return;
-			if (!calcInput.isBlank() && calcInput.substring(calcInput.length() - 1, calcInput.length()).equals("/")
-					&& displayText.getText().equals("0")) {
-				showErrorWindow("Nie mo¿na dzieliæ przez zero", "Popraw swoje obliczenia.");
-				return;
-			}
-			if (usePower) {
-				usePower = false;
-				calcInput = calcInput + ", " + displayText.getText() + ")";
-			} else
-				calcInput = calcInput.concat(displayText.getText());
-			calculate();
-			finalResultShown = true;
-			pendingOperation = "";
 		});
 
 		power.setOnAction(e -> {
@@ -252,8 +197,80 @@ public class Controller {
 			calculate();
 			calcInput = oldCalcInput;
 		});
+
+		backspace.setOnAction(e -> {
+			if (nonNumericOutputShown)
+				return;
+			if (displayText.getText().equals("0"))
+				return;
+			if (finalResultShown)
+				return;
+			if (displayText.getText().length() == 1) {
+				displayText.setText("0");
+				return;
+			}
+
+			displayText.setText(displayText.getText().substring(0, displayText.getText().length() - 1));
+		});
+
+		clearEntry.setOnAction(e -> {
+			if (nonNumericOutputShown)
+				return;
+			if (displayText.getText().equals("0"))
+				return;
+			if (finalResultShown)
+				return;
+
+			displayText.setText("0");
+		});
+
+		allCancel.setOnAction(e -> {
+			displayText.setText("0");
+			finalResultShown = false;
+			pendingOperation = "";
+			calcInput = "";
+			nonNumericOutputShown = false;
+			usePower = false;
+		});
+
+		invertSign.setOnAction(e -> {
+			if (nonNumericOutputShown)
+				return;
+			if (displayText.getText().equals("0"))
+				return;
+			if (displayText.getText().startsWith("-"))
+				displayText.setText(displayText.getText().substring(1, displayText.getText().length()));
+			else
+				displayText.setText("-" + displayText.getText());
+		});
+
+		equals.setOnAction(e -> {
+			if (nonNumericOutputShown)
+				return;
+			if (!calcInput.isBlank() && calcInput.substring(calcInput.length() - 1, calcInput.length()).equals("/")
+					&& displayText.getText().equals("0")) {
+				showErrorWindow("Nie mo¿na dzieliæ przez zero", "Popraw swoje obliczenia.");
+				return;
+			}
+			if (usePower) {
+				usePower = false;
+				calcInput = calcInput + ", " + displayText.getText() + ")";
+			} else
+				calcInput = calcInput.concat(displayText.getText());
+			calculate();
+			finalResultShown = true;
+			pendingOperation = "";
+		});
 	}
 
+	/**
+	 * Method responsible for showing an error <code>Alert</code> window, as
+	 * requested by other parts of the class.
+	 * 
+	 * @param header  text containing the header for the <code>Alert</code> window
+	 * @param content text containing the main text for the <code>Alert</code>
+	 *                window
+	 */
 	private void showErrorWindow(String header, String content) {
 		Alert alert = new Alert(AlertType.ERROR);
 		alert.setTitle("B³¹d dzia³ania programu");
@@ -262,6 +279,14 @@ public class Controller {
 		alert.showAndWait();
 	}
 
+	/**
+	 * Method responsible for showing a warning <code>Alert</code> window, as
+	 * requested by other parts of the class.
+	 * 
+	 * @param header  text containing the header for the <code>Alert</code> window
+	 * @param content text containing the main text for the <code>Alert</code>
+	 *                window
+	 */
 	private void showWarningWindow(String header, String content) {
 		Alert alert = new Alert(AlertType.WARNING);
 		alert.setTitle("Uwaga");
@@ -270,6 +295,11 @@ public class Controller {
 		alert.showAndWait();
 	}
 
+	/**
+	 * Method responsible for calling the JShell calculating engine created in an
+	 * instance of the <code>Model</code> part to calculate an expression as
+	 * requested by other methods in the <code>calcInput</code> String.
+	 */
 	private void calculate() {
 		String result = model.calculate(calcInput);
 		if (!result.isBlank() && result.length() > 2
@@ -289,6 +319,12 @@ public class Controller {
 		calcInput = "";
 	}
 
+	/**
+	 * Method responsible for the correct insertion of a given digit (or a decimal
+	 * sign) at the back of the currently displayed number.
+	 * 
+	 * @param digit a digit to be inserted in the display
+	 */
 	private void digitAppend(String digit) {
 		if (nonNumericOutputShown)
 			return;
@@ -332,6 +368,12 @@ public class Controller {
 			displayText.setText(displayText.getText() + digit);
 	}
 
+	/**
+	 * Method responsible for handling the operation buttons and preparing the
+	 * arguments for appropriate processing by the JShell.
+	 * 
+	 * @param operation the sign of an operation which has been clicked
+	 */
 	private void mathOperationClicked(String operation) {
 		if (nonNumericOutputShown)
 			return;

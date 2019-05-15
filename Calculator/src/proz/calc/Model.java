@@ -7,7 +7,23 @@ import javafx.scene.control.Alert.AlertType;
 import jdk.jshell.JShell;
 import jdk.jshell.SnippetEvent;
 
+/**
+ * Class implementing the Model portion of the program. The evaluation of the
+ * expressions is carried out by the JShell.
+ * 
+ * @author wk
+ *
+ */
+
 public class Model {
+
+	/**
+	 * The method responsible for creating a JShell instance and passing arguments
+	 * to it.
+	 * 
+	 * @param expression expression to be calculated by the JShell
+	 * @return the result of the evaluation of the expression
+	 */
 	public String calculate(String expression) {
 		JShell jshell = JShell.create();
 		String result = "B³¹d.";
