@@ -48,7 +48,7 @@
             <Button fx:id="invertSign" mnemonicParsing="false" prefHeight="50.0" prefWidth="62.5" styleClass="invertSign" stylesheets="@style.css" text="⁺∕₋" GridPane.columnIndex="3" />
             <Button fx:id="sqrt" mnemonicParsing="false" prefHeight="50.0" prefWidth="62.5" styleClass="advancedArithmetic" stylesheets="@style.css" text="√n" />
             <Button fx:id="power" mnemonicParsing="false" prefHeight="50.0" prefWidth="62.5" styleClass="advancedArithmetic" stylesheets="@style.css" text="aⁿ" GridPane.columnIndex="1" />
-            <Button fx:id="factorial" mnemonicParsing="false" prefHeight="50.0" prefWidth="62.5" styleClass="advancedArithmetic" stylesheets="@style.css" text="n!" GridPane.columnIndex="2" />
+            <Button fx:id="naturalLogarithm" mnemonicParsing="false" prefHeight="50.0" prefWidth="62.5" styleClass="advancedArithmetic" stylesheets="@style.css" text="ln" GridPane.columnIndex="2" />
             <Button fx:id="clearEntry" mnemonicParsing="false" prefHeight="50.0" prefWidth="62.5" styleClass="clearButtons" stylesheets="@style.css" text="CE" GridPane.columnIndex="1" GridPane.rowIndex="1" />
          </children>
       </GridPane>

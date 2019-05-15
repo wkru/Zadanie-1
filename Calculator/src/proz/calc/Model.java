@@ -15,7 +15,7 @@ public class Model {
 			List<SnippetEvent> events = jshell.eval(expression);
 
 			for (SnippetEvent e : events) {
-				if(e.causeSnippet() == null) {
+				if (e.causeSnippet() == null) {
 					switch (e.status()) {
 					case VALID:
 						if (e.value() != null) {

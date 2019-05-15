@@ -76,7 +76,7 @@ public class Controller {
 	private Button power;
 
 	@FXML
-	private Button factorial;
+	private Button naturalLogarithm;
 
 	@FXML
 	private Button clearEntry;
@@ -93,92 +93,6 @@ public class Controller {
 	private boolean nonNumericOutputShown = false;
 	private boolean usePower = false;
 	private Model model = new Model();
-
-	private void showErrorWindow(String header, String content) {
-		Alert alert = new Alert(AlertType.ERROR);
-		alert.setTitle("B³¹d dzia³ania programu");
-		alert.setHeaderText(header);
-		alert.setContentText(content);
-		alert.showAndWait();
-	}
-
-	private void showWarningWindow(String header, String content) {
-		Alert alert = new Alert(AlertType.WARNING);
-		alert.setTitle("Uwaga");
-		alert.setHeaderText(header);
-		alert.setContentText(content);
-		alert.showAndWait();
-	}
-
-	private void calculate() {
-		String result = model.calculate(calcInput);
-		if (!result.isBlank() && result.substring(result.length() - 2, result.length()).equals(".0"))
-			result = result.substring(0, result.length() - 2);
-		displayText.setText(result);
-		if (displayText.getText().equals("B³¹d."))
-			nonNumericOutputShown = true;
-		if (displayText.getText().equals("Infinity")) {
-			showWarningWindow("Wynikiem obliczeñ by³a nieskoñczonoœæ", "Skasuj wynik obliczeñ klawiszem AC.");
-			nonNumericOutputShown = true;
-		}
-		if (displayText.getText().equals("NaN")) {
-			showErrorWindow("Wynikiem obliczeñ by³a nie-liczba", "Skasuj wynik obliczeñ klawiszem AC.");
-			nonNumericOutputShown = true;
-		}
-		calcInput = "";
-	}
-
-	private void digitAppend(String digit) {
-		if (nonNumericOutputShown)
-			return;
-		if (finalResultShown) {
-			displayText.setText("0");
-			finalResultShown = false;
-		}
-		if (!pendingOperation.isBlank()) {
-			if (pendingOperation.equals("^")) {
-				calcInput = "Math.pow(" + displayText.getText();
-			} else if (pendingOperation.equals("/")) {
-				if (!displayText.getText().contains("."))
-					calcInput = displayText.getText() + "." + pendingOperation;
-				else
-					calcInput = displayText.getText() + pendingOperation;
-			} else
-				calcInput = displayText.getText() + pendingOperation;
-			pendingOperation = "";
-			displayText.setText(digit);
-			return;
-		}
-		if (displayText.getText().length() + digit.length() > 16) {
-			showWarningWindow("Przekroczona liczba znaków", "Maksymalna dozwolona liczba znaków to 16.");
-			return;
-		}
-		if (displayText.getText().equals("0")) {
-			if (!(digit.equals("0") || digit.equals("000")))
-				displayText.setText(digit);
-		} else
-			displayText.setText(displayText.getText() + digit);
-	}
-
-	private void mathOperationClicked(String operation) {
-		if (finalResultShown)
-			finalResultShown = false;
-		if (!pendingOperation.isBlank()) {
-			pendingOperation = "/";
-			return;
-		}
-		if (!calcInput.isBlank() && calcInput.substring(calcInput.length() - 1, calcInput.length()).equals("/")
-				&& displayText.getText().equals("0")) {
-			showErrorWindow("Nie mo¿na dzieliæ przez zero", "Popraw swoje obliczenia.");
-			return;
-		}
-		if (operation.equals("/") && !displayText.getText().contains("."))
-			calcInput = calcInput + displayText.getText() + ".";
-		else
-			calcInput = calcInput.concat(displayText.getText());
-		calculate();
-		pendingOperation = operation;
-	}
 
 	public void initialize() {
 		zero.setOnAction(e -> {
@@ -261,6 +175,7 @@ public class Controller {
 			pendingOperation = "";
 			calcInput = "";
 			nonNumericOutputShown = false;
+			usePower = false;
 		});
 
 		invertSign.setOnAction(e -> {
@@ -275,14 +190,7 @@ public class Controller {
 		});
 
 		decimalSign.setOnAction(e -> {
-			if (nonNumericOutputShown)
-				return;
-			if (displayText.getText().length() + 1 > 16) {
-				showWarningWindow("Przekroczona liczba znaków", "Maksymalna dozwolona liczba znaków to 16.");
-				return;
-			}
-			if (!displayText.getText().contains("."))
-				displayText.setText(displayText.getText() + ".");
+			digitAppend(".");
 		});
 
 		add.setOnAction(e -> {
@@ -309,7 +217,11 @@ public class Controller {
 				showErrorWindow("Nie mo¿na dzieliæ przez zero", "Popraw swoje obliczenia.");
 				return;
 			}
-			calcInput = calcInput.concat(displayText.getText());
+			if (usePower) {
+				usePower = false;
+				calcInput = calcInput + ", " + displayText.getText() + ")";
+			} else
+				calcInput = calcInput.concat(displayText.getText());
 			calculate();
 			finalResultShown = true;
 			pendingOperation = "";
@@ -318,5 +230,130 @@ public class Controller {
 		power.setOnAction(e -> {
 			mathOperationClicked("^");
 		});
+
+		sqrt.setOnAction(e -> {
+			if (nonNumericOutputShown)
+				return;
+			if (finalResultShown)
+				finalResultShown = false;
+			String oldCalcInput = calcInput;
+			calcInput = "Math.pow(" + displayText.getText() + ", 0.5)";
+			calculate();
+			calcInput = oldCalcInput;
+		});
+
+		naturalLogarithm.setOnAction(e -> {
+			if (nonNumericOutputShown)
+				return;
+			if (finalResultShown)
+				finalResultShown = false;
+			String oldCalcInput = calcInput;
+			calcInput = "Math.log(" + displayText.getText() + ")";
+			calculate();
+			calcInput = oldCalcInput;
+		});
+	}
+
+	private void showErrorWindow(String header, String content) {
+		Alert alert = new Alert(AlertType.ERROR);
+		alert.setTitle("B³¹d dzia³ania programu");
+		alert.setHeaderText(header);
+		alert.setContentText(content);
+		alert.showAndWait();
+	}
+
+	private void showWarningWindow(String header, String content) {
+		Alert alert = new Alert(AlertType.WARNING);
+		alert.setTitle("Uwaga");
+		alert.setHeaderText(header);
+		alert.setContentText(content);
+		alert.showAndWait();
+	}
+
+	private void calculate() {
+		String result = model.calculate(calcInput);
+		if (!result.isBlank() && result.length() > 2
+				&& result.substring(result.length() - 2, result.length()).equals(".0"))
+			result = result.substring(0, result.length() - 2);
+		displayText.setText(result);
+		if (displayText.getText().equals("B³¹d."))
+			nonNumericOutputShown = true;
+		if (displayText.getText().equals("Infinity")) {
+			showWarningWindow("Wynikiem obliczeñ by³a nieskoñczonoœæ", "Skasuj wynik obliczeñ klawiszem AC.");
+			nonNumericOutputShown = true;
+		}
+		if (displayText.getText().equals("NaN")) {
+			showErrorWindow("Wynikiem obliczeñ by³a nie-liczba", "Skasuj wynik obliczeñ klawiszem AC.");
+			nonNumericOutputShown = true;
+		}
+		calcInput = "";
+	}
+
+	private void digitAppend(String digit) {
+		if (nonNumericOutputShown)
+			return;
+		if (finalResultShown) {
+			displayText.setText("0");
+			finalResultShown = false;
+		}
+		if (!pendingOperation.isBlank()) {
+			if (pendingOperation.equals("^")) {
+				calcInput = "Math.pow(" + displayText.getText();
+				usePower = true;
+			} else if (pendingOperation.equals("/")) {
+				if (!displayText.getText().contains("."))
+					calcInput = displayText.getText() + "." + pendingOperation;
+				else
+					calcInput = displayText.getText() + pendingOperation;
+			} else
+				calcInput = displayText.getText() + pendingOperation;
+			pendingOperation = "";
+			if (digit.equals("."))
+				displayText.setText("0.");
+			else
+				displayText.setText(digit);
+			return;
+		}
+		if (displayText.getText().length() + digit.length() > 16) {
+			showWarningWindow("Przekroczona liczba znaków", "Maksymalna dozwolona liczba znaków to 16.");
+			return;
+		}
+		if (digit.equals(".")) {
+			if (!displayText.getText().contains(".")) {
+				displayText.setText(displayText.getText() + ".");
+				return;
+			} else
+				return;
+		}
+		if (displayText.getText().equals("0")) {
+			if (!(digit.equals("0") || digit.equals("000")))
+				displayText.setText(digit);
+		} else
+			displayText.setText(displayText.getText() + digit);
+	}
+
+	private void mathOperationClicked(String operation) {
+		if (nonNumericOutputShown)
+			return;
+		if (finalResultShown)
+			finalResultShown = false;
+		if (!pendingOperation.isBlank()) {
+			pendingOperation = operation;
+			return;
+		}
+		if (!calcInput.isBlank() && calcInput.substring(calcInput.length() - 1, calcInput.length()).equals("/")
+				&& displayText.getText().equals("0")) {
+			showErrorWindow("Nie mo¿na dzieliæ przez zero", "Popraw swoje obliczenia.");
+			return;
+		}
+		if (usePower) {
+			usePower = false;
+			calcInput = calcInput + ", " + displayText.getText() + ")";
+		} else if (operation.equals("/") && !displayText.getText().contains("."))
+			calcInput = calcInput + displayText.getText() + ".";
+		else
+			calcInput = calcInput.concat(displayText.getText());
+		calculate();
+		pendingOperation = operation;
 	}
 }

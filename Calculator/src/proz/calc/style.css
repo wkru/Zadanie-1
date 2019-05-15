@@ -1,11 +1,11 @@
 .numbers {
-    -fx-font-size: 15;
-    -fx-font-weight: bold;
-    -fx-font-family: "Segoe UI", sans-serif;
-	-fx-text-fill:"#FEFEFE";
+	-fx-font-size: 15;
+	-fx-font-weight: bold;
+	-fx-font-family: "Segoe UI", sans-serif;
+	-fx-text-fill: "#FEFEFE";
 	-fx-alignment: center;
-    -fx-border-color: black;
-    -fx-border-width: 1;
+	-fx-border-color: black;
+	-fx-border-width: 1;
 	-fx-background-color: "#333333";
 	-fx-background-radius: 5;
 }
@@ -26,18 +26,18 @@
 	-fx-border-color: "#000000";
 	-fx-stroke: "#000000";
 	-fx-background-color: "#000000";
-    -fx-background-insets: 0, 1 1 0 0 ;
-    -fx-padding: 1 ;
+	-fx-background-insets: 0, 1 1 0 0;
+	-fx-padding: 1;
 }
 
 .basicArithmetics {
 	-fx-font-size: 15;
-    -fx-font-weight: bold;
-    -fx-font-family: "Segoe UI", sans-serif;
-	-fx-text-fill:"#FEFEFE";
+	-fx-font-weight: bold;
+	-fx-font-family: "Segoe UI", sans-serif;
+	-fx-text-fill: "#FEFEFE";
 	-fx-alignment: center;
-    -fx-border-color: black;
-    -fx-border-width: 1;
+	-fx-border-color: black;
+	-fx-border-width: 1;
 	-fx-background-color: "#FF9501";
 	-fx-background-radius: 5;
 }
@@ -52,12 +52,12 @@
 
 .clearButtons {
 	-fx-font-size: 15;
-    -fx-font-weight: bold;
-    -fx-font-family: "Segoe UI", sans-serif;
-	-fx-text-fill:"#FEFEFE";
+	-fx-font-weight: bold;
+	-fx-font-family: "Segoe UI", sans-serif;
+	-fx-text-fill: "#FEFEFE";
 	-fx-alignment: center;
-    -fx-border-color: black;
-    -fx-border-width: 1;
+	-fx-border-color: black;
+	-fx-border-width: 1;
 	-fx-background-color: "#FF0000";
 	-fx-background-radius: 5;
 }
@@ -72,12 +72,12 @@
 
 .equals {
 	-fx-font-size: 15;
-    -fx-font-weight: bold;
-    -fx-font-family: "Segoe UI", sans-serif;
-	-fx-text-fill:"#FEFEFE";
+	-fx-font-weight: bold;
+	-fx-font-family: "Segoe UI", sans-serif;
+	-fx-text-fill: "#FEFEFE";
 	-fx-alignment: center;
-    -fx-border-color: black;
-    -fx-border-width: 1;
+	-fx-border-color: black;
+	-fx-border-width: 1;
 	-fx-background-color: "#309A33";
 	-fx-background-radius: 5;
 }
@@ -92,12 +92,12 @@
 
 .advancedArithmetic {
 	-fx-font-size: 15;
-    -fx-font-weight: bold;
-    -fx-font-family: "Segoe UI", sans-serif;
-	-fx-text-fill:"#FEFEFE";
+	-fx-font-weight: bold;
+	-fx-font-family: "Segoe UI", sans-serif;
+	-fx-text-fill: "#FEFEFE";
 	-fx-alignment: center;
-    -fx-border-color: black;
-    -fx-border-width: 1;
+	-fx-border-color: black;
+	-fx-border-width: 1;
 	-fx-background-color: "#2C829E";
 	-fx-background-radius: 5;
 }
@@ -112,12 +112,12 @@
 
 .invertSign {
 	-fx-font-size: 15;
-    -fx-font-weight: bold;
-    -fx-font-family: "Segoe UI", sans-serif;
-	-fx-text-fill:"#FEFEFE";
+	-fx-font-weight: bold;
+	-fx-font-family: "Segoe UI", sans-serif;
+	-fx-text-fill: "#FEFEFE";
 	-fx-alignment: center;
-    -fx-border-color: black;
-    -fx-border-width: 1;
+	-fx-border-color: black;
+	-fx-border-width: 1;
 	-fx-background-color: "#DBD728";
 	-fx-background-radius: 5;
 }
@@ -133,11 +133,11 @@
 .resultDisplay {
 	-fx-background-color: "#FFFFFF";
 	-fx-background-radius: 5;
-	-fx-text-alignment:"right";
+	-fx-text-alignment: "right";
 }
 
 .displayText {
 	-fx-font-size: 18;
-   	-fx-font-weight: bold;
+	-fx-font-weight: bold;
 	-fx-font-family: "Segoe UI", sans-serif;
 }
