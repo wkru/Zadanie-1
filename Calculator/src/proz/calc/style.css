@@ -131,17 +131,13 @@
 }
 
 .resultDisplay {
-	-fx-font-size: 18;
-    -fx-font-weight: bold;
-    -fx-font-family: "Segoe UI", sans-serif;
 	-fx-background-color: "#FFFFFF";
 	-fx-background-radius: 5;
-	-fx-text-fill:"000000";
 	-fx-text-alignment:"right";
 }
 
 .displayText {
-	-fx-font-size: 31;
+	-fx-font-size: 18;
    	-fx-font-weight: bold;
 	-fx-font-family: "Segoe UI", sans-serif;
 }

@@ -26,6 +26,7 @@ public class Model {
 						Alert alert = new Alert(AlertType.ERROR);
 						alert.setTitle("B³¹d dzia³ania programu");
 						alert.setHeaderText("W trakcie obliczeñ napotkano b³¹d.");
+						alert.showAndWait();
 						break;
 					}
 				}

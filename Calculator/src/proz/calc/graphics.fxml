@@ -52,9 +52,9 @@
             <Button fx:id="combinations" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="advancedArithmetic" stylesheets="@style.css" text="nCr" GridPane.columnIndex="3" />
          </children>
       </GridPane>
-      <TextFlow fx:id="display" layoutX="2.0" layoutY="3.0" prefHeight="46.0" prefWidth="196.0" styleClass="resultDisplay" stylesheets="@style.css">
+      <TextFlow fx:id="display" layoutX="8.0" layoutY="8.0" prefHeight="36.0" prefWidth="184.0" styleClass="resultDisplay" stylesheets="@style.css">
          <children>
-            <Text fx:id="displayText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="displayText" text="0" wrappingWidth="64.119140625" />
+            <Text fx:id="displayText" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="displayText" text="0" textAlignment="RIGHT" textOrigin="CENTER" wrappingWidth="64.119140625" />
          </children></TextFlow>
    </children>
 </AnchorPane>
